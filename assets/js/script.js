@@ -58,6 +58,8 @@ var createTaskHandler = function() {
     listItemEl.appendChild(taskInfoEl);
     // add entire list item to list
     tasksToDoEl.appendChild(listItemEl);
+
+    // console.dir(listItemEl);
 };
 
 // buttonEl.addEventListener("click", createTaskHandler);

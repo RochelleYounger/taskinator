@@ -35,11 +35,8 @@ buttonEl.addEventListener("click", function() {
 
 /*****OPTIMIIZED "ADD TASK" BUTTON FUNCTIONALITY*****/
 var createTaskHandler = function() {
-
     event.preventDefault();
-
-    console.log(event);
-
+    // console.log(event);
     var listItemEl = document.createElement("li");
     listItemEl.className= "task-item";
     listItemEl.textContent = "This is a new task.";

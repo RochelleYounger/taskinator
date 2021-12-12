@@ -22,7 +22,28 @@
 // var buttonEl = document.querySelector("#save-task");
 // // console.log(buttonEl);
 
+/**************FORM VALIDATION CONDITIONS EXAMPLES**************
+if (true) {
+// this will run because true is true
+  console.log("Is true true? Yes.");
+}
 
+if (false) {
+// this will not run because false is not true
+  console.log("Is false true? No.");
+}
+
+if (3 === 10 || "a" === "a") {
+// this will run because at least one of the conditions is true
+  console.log("Does 3 equal 10? No.");
+  console.log("Does the letter 'a' equal the letter 'a'? Yes.");
+}
+
+if (3 === 10 && "a" === "a") {
+// this will not run because both conditions have to be true to run
+  console.log("Does 3 equal 10? No.");
+  console.log("Does the letter 'a' equal the letter 'a'? Yes.");
+} */
 
 
 /**********************************CODE BEFORE THE REFACTOR START**********************************/
@@ -70,7 +91,7 @@ buttonEl.addEventListener("click", function() {
 formEl.addEventListener("submit", createTaskHandler); */
 /**********************************CODE BEFORE THE REFACTOR END**********************************/
 
-/**********************************CODE AFTER THE REFACTOR START**********************************/
+/***************************CODE AFTER THE REFACTOR START*****************************/
 
 var formEl = document.querySelector("#task-form");
 var tasksToDoEl = document.querySelector("#tasks-to-do");
@@ -80,6 +101,12 @@ var taskFormHandler = function() {
     var taskNameInput = document.querySelector("input[name='task-name']").value;
     var taskTypeInput = document.querySelector("select[name='task-type']").value;
 
+    // check if input values are empty strings
+    if (!taskNameInput || !taskTypeInput) {
+        alert("You need to fill out the task form!");
+        return false;
+    };
+    formEl.reset();
     // package up data as an object
     var taskDataObj = {
         name: taskNameInput,
@@ -108,4 +135,4 @@ var createTaskEl = function(taskDataObj) {
 
 formEl.addEventListener("submit", taskFormHandler);
 
-/**********************************CODE AFTER THE REFACTOR END**********************************/
+/***************************CODE AFTER THE REFACTOR END******************************/
